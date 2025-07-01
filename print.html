@@ -16,6 +16,32 @@
 			<link href="css/research-section.css" rel="stylesheet" type="text/css" />
 			<link href="css/side-nav.css" rel="stylesheet" type="text/css" />
 			<script src="js/modernizr.custom.js"></script>
+			<style>
+				@media print {
+					/* Show only the scrollable content */
+					body * { visibility: hidden; }
+					.page-scroll, .page-scroll * { visibility: visible; }
+					.page-scroll { position: absolute; top: 0; left: 0; width: 100%; }
+					/* Shrink profile photo */
+					.img-thumbnail {
+						width: 100px !important;
+						height: auto !important;
+						background-size: contain !important;
+						background-position: center center !important;
+					}
+					.page-break {
+						display: block;
+						page-break-before: always;
+						page-break-after: always;
+						break-after: page;
+					}
+					/* Keep Bootstrap two-column layout */
+					.row { width: 100% !important; }
+					.col-md-2, .col-md-10 { float: left !important; display: block !important; }
+					.col-md-2 { width: 16.6667% !important; }
+					.col-md-10 { width: 83.3333% !important; }
+				}
+			</style>
 		</meta>
 	</head>
 
@@ -30,9 +56,7 @@
 								<!-- Home Page Top Part -->
 								<div class="row">
 									<div class="col-md-2">
-										<div class="home-photo">
-											<div class="hp-inner" style="background-image: url(./img/main_photo.jpg)" role="img" aria-label="Profile photo of Ahmed Khalid Kadhim"></div>
-										</div>
+										<img src="img/main_photo.jpg" alt="" class="img-thumbnail">
 									</div>
 									<div class="col-md-10">
 										<div class="home-text hp-left">
@@ -50,53 +74,49 @@
 												with a research focus spanning semiconductors, robotics, and interpretable
 												machine learning. -->
 											</p>
-											<a class="btn btn-secondary" href="https://linkedin.com/in/ahmed-khalid-kadhim-3b228655">
-												LinkedIn
-												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 50 50" fill="#ffffff">
-													<path
-														d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
-													</path>
-												</svg>
-											</a>
-											<a class="btn btn-secondary" href="https://scholar.google.com/citations?user=DeOHISIAAAAJ&hl=en">
-												Google Scholar
-												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 50 50" fill="#ffffff">
-													<path
-														d="M 25 3 C 12.85 3 3 12.85 3 25 C 3 37.15 12.85 47 25 47 C 37.15 47 47 37.15 47 25 C 47 12.85 37.15 3 25 3 z M 21 11 L 38 11 L 36.980469 11.880859 C 36.980469 11.920859 37 11.96 37 12 L 37 17.279297 C 37.6 17.619297 38 18.26 38 19 L 38 25 C 38 26.1 37.1 27 36 27 C 34.9 27 34 26.1 34 25 L 34 19 C 34 18.26 34.4 17.619297 35 17.279297 L 35 13.570312 L 31.410156 16.650391 C 31.760156 17.350391 32 18.200234 32 19.240234 C 32 21.960234 30.480703 23.309766 28.970703 24.509766 C 28.500703 24.989766 27.949219 25.510312 27.949219 26.320312 C 27.949219 27.120313 28.500391 27.570625 28.900391 27.890625 L 30.189453 28.919922 C 31.779453 30.279922 33.220703 31.530547 33.220703 34.060547 C 33.220703 37.510547 29.930469 41 23.730469 41 C 18.500469 41 15.980469 38.47 15.980469 35.75 C 15.980469 34.43 16.629766 32.559531 18.759766 31.269531 C 20.989766 29.879531 24.020391 29.690078 25.650391 29.580078 C 25.140391 28.920078 24.560547 28.230078 24.560547 27.080078 C 24.560547 26.470078 24.749687 26.100391 24.929688 25.650391 C 24.529688 25.690391 24.129531 25.730469 23.769531 25.730469 C 19.969531 25.730469 17.799297 22.85 17.779297 20 L 11 20 L 21 11 z M 24.269531 14.240234 C 23.339531 14.240234 22.33 14.710938 21.75 15.460938 C 21.14 16.220938 20.949219 17.210156 20.949219 18.160156 C 20.949219 20.620156 22.370938 24.699219 25.460938 24.699219 C 26.370938 24.699219 27.339922 24.259922 27.919922 23.669922 C 28.739922 22.819922 28.820312 21.65 28.820312 21 C 28.820312 18.35 27.269531 14.240234 24.269531 14.240234 z M 26.039062 30.609375 C 25.719062 30.609375 23.769766 30.679219 22.259766 31.199219 C 21.459766 31.499219 19.160156 32.370469 19.160156 34.980469 C 19.160156 37.590469 21.64 39.460938 25.5 39.460938 C 28.97 39.460938 30.800781 37.760234 30.800781 35.490234 C 30.800781 33.620234 29.620859 32.630391 26.880859 30.650391 C 26.590859 30.610391 26.409063 30.609375 26.039062 30.609375 z">
-													</path>
-												</svg>
-											</a>
-											<a class="btn btn-secondary" href="https://github.com/akkadhim">
-												GitHub
-												<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 64 64" fill="#ffffff">
-													<path
-														d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z">
-													</path>
-												</svg>
-											</a>
-											<a class="btn btn-secondary" href="https://www.uia.no/om-uia/ansatte/ahmedkk/">
-												University of Agder &nbsp;
-												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" width="32" height="32" viewBox="0 0 396.75202 165.76092" fill="#ffffff">
-													<defs>
-														<symbol id="uia_symbol_positiv" data-name="uia symbol positiv" viewBox="0 0 135 166">
-															<g>
-																<path class="cls-1" d="m62.5,58.6h12.6c-2.5-13.2.7-18.5,11.7-18.5h48.09999v-13.3h-48.39999c-19,0-28.4,11.1-24,31.8Z" />
-																<rect class="cls-1" x="120.8" y="77.9" width="14.1" height="88.1" />
-																<rect class="cls-1" x="92" y="77.9" width="14.1" height="88.1" />
-																<rect class="cls-1" x="91.3" y="51.8" width="43.7" height="13.4" />
-																<path class="cls-1" d="m59,153.1c-14-.5-23.4-8.6-23.1-20.4.2-10.6,7.5-19.5,18.1-19.5,6.4,0,12.4,1.4,16.7,6.5v-14c-4.6-3.7-11-5.3-16.5-5.3-16.5,0-31,12.8-31,31.1,0,8.2,3.9,15.7,8.1,20.4-11.9-5.9-19-16.4-19-32.5,0-18.6,15.1-32.8,33.7-32.8,3.2,0,6.1.3,9.3,1.1v-14c-2.5-.6-6.1-.8-8.8-.8C20.9,72.9,0,93.7,0,119.4c.1,29,21.5,46.6,45.7,46.6h31.7v-12.8c-.1,0-10.9,0-18.4-.1h0Z" />
-																<path class="cls-1" d="m1.1,0v79.8c3.6-3.9,7.1-7,12-9.8V12.1h121.8V0H1.1Z" />
-															</g>
-														</symbol>
-													</defs>
-													<g>
-														<path class="cls-1" d="m204.85203,38.93936v55.40001c0,19.2,10.10001,24.7,20.70001,24.7,12.29999,0,20.39999-6.3,20.39999-24.7v-55.39999h17.39999v54.5c0,31.10001-17.89999,39.39999-38.10001,39.39999-20.39999,0-37.89999-8.70001-37.89999-38.8v-55.09999l17.5-.00002h0Z" />
-														<path class="cls-1" d="m281.15202,38.93936h16.60001v16.3h-16.60001v-16.3Zm0,29.10001h16.60001v63.59999h-16.60001v-63.59999Z" />
-														<path class="cls-1" d="m334.95203,108.03936l-8.20001,23.59999h-17.10001l32-92.60001h21.70001l33.39999,92.60001h-18.29999l-8.5-23.60001h-35v.00002Zm31-14.40001c-7.29999-21.2-11.79999-33.8-13.89999-41.7h-.10001c-2.29999,8.7-7.20001,23.60001-13.10001,41.7h27.10001Z" />
-													</g>
-													<use width="135" height="166" transform="" xlink:href="#uia_symbol_positiv" />
-												</svg>
-											</a>
+											<div class="print-links">
+												<p class="link-item">
+													<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" fill="#2066a1" style="vertical-align: middle; margin-right: 8px;">
+														<path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+													</svg>
+													<strong>LinkedIn:</strong> linkedin.com/in/ahmed-khalid-kadhim-3b228655
+												</p>
+												<p class="link-item">
+													<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50" fill="#2066a1" style="vertical-align: middle; margin-right: 8px;">
+														<path d="M 25 3 C 12.85 3 3 12.85 3 25 C 3 37.15 12.85 47 25 47 C 37.15 47 47 37.15 47 25 C 47 12.85 37.15 3 25 3 z M 21 11 L 38 11 L 36.980469 11.880859 C 36.980469 11.920859 37 11.96 37 12 L 37 17.279297 C 37.6 17.619297 38 18.26 38 19 L 38 25 C 38 26.1 37.1 27 36 27 C 34.9 27 34 26.1 34 25 L 34 19 C 34 18.26 34.4 17.619297 35 17.279297 L 35 13.570312 L 31.410156 16.650391 C 31.760156 17.350391 32 18.200234 32 19.240234 C 32 21.960234 30.480703 23.309766 28.970703 24.509766 C 28.500703 24.989766 27.949219 25.510312 27.949219 26.320312 C 27.949219 27.120313 28.500391 27.570625 28.900391 27.890625 L 30.189453 28.919922 C 31.779453 30.279922 33.220703 31.530547 33.220703 34.060547 C 33.220703 37.510547 29.930469 41 23.730469 41 C 18.500469 41 15.980469 38.47 15.980469 35.75 C 15.980469 34.43 16.629766 32.559531 18.759766 31.269531 C 20.989766 29.879531 24.020391 29.690078 25.650391 29.580078 C 25.140391 28.920078 24.560547 28.230078 24.560547 27.080078 C 24.560547 26.470078 24.749687 26.100391 24.929688 25.650391 C 24.529688 25.690391 24.129531 25.730469 23.769531 25.730469 C 19.969531 25.730469 17.799297 22.85 17.779297 20 L 11 20 L 21 11 z M 24.269531 14.240234 C 23.339531 14.240234 22.33 14.710938 21.75 15.460938 C 21.14 16.220938 20.949219 17.210156 20.949219 18.160156 C 20.949219 20.620156 22.370938 24.699219 25.460938 24.699219 C 26.370938 24.699219 27.339922 24.259922 27.919922 23.669922 C 28.739922 22.819922 28.820312 21.65 28.820312 21 C 28.820312 18.35 27.269531 14.240234 24.269531 14.240234 z M 26.039062 30.609375 C 25.719062 30.609375 23.769766 30.679219 22.259766 31.199219 C 21.459766 31.499219 19.160156 32.370469 19.160156 34.980469 C 19.160156 37.590469 21.64 39.460938 25.5 39.460938 C 28.97 39.460938 30.800781 37.760234 30.800781 35.490234 C 30.800781 33.620234 29.620859 32.630391 26.880859 30.650391 C 26.590859 30.610391 26.409063 30.609375 26.039062 30.609375 z"></path>
+													</svg>
+													<strong>Google Scholar:</strong> scholar.google.com/citations?user=DeOHISIAAAAJ&hl=en
+												</p>
+												<p class="link-item">
+													<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 64 64" fill="#2066a1" style="vertical-align: middle; margin-right: 8px;">
+														<path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path>
+													</svg>
+													<strong>GitHub:</strong> github.com/akkadhim
+												</p>
+												<p class="link-item">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" width="20" height="20" viewBox="0 0 396.75202 165.76092" fill="#2066a1" style="vertical-align: middle; margin-right: 8px;">
+														<defs>
+															<symbol id="uia_symbol_positiv" data-name="uia symbol positiv" viewBox="0 0 135 166">
+																<g>
+																	<path class="cls-1" d="m62.5,58.6h12.6c-2.5-13.2.7-18.5,11.7-18.5h48.09999v-13.3h-48.39999c-19,0-28.4,11.1-24,31.8Z" />
+																	<rect class="cls-1" x="120.8" y="77.9" width="14.1" height="88.1" />
+																	<rect class="cls-1" x="92" y="77.9" width="14.1" height="88.1" />
+																	<rect class="cls-1" x="91.3" y="51.8" width="43.7" height="13.4" />
+																	<path class="cls-1" d="m59,153.1c-14-.5-23.4-8.6-23.1-20.4.2-10.6,7.5-19.5,18.1-19.5,6.4,0,12.4,1.4,16.7,6.5v-14c-4.6-3.7-11-5.3-16.5-5.3-16.5,0-31,12.8-31,31.1,0,8.2,3.9,15.7,8.1,20.4-11.9-5.9-19-16.4-19-32.5,0-18.6,15.1-32.8,33.7-32.8,3.2,0,6.1.3,9.3,1.1v-14c-2.5-.6-6.1-.8-8.8-.8C20.9,72.9,0,93.7,0,119.4c.1,29,21.5,46.6,45.7,46.6h31.7v-12.8c-.1,0-10.9,0-18.4-.1h0Z" />
+																	<path class="cls-1" d="m1.1,0v79.8c3.6-3.9,7.1-7,12-9.8V12.1h121.8V0H1.1Z" />
+																</g>
+															</symbol>
+														</defs>
+														<g>
+															<path class="cls-1" d="m204.85203,38.93936v55.40001c0,19.2,10.10001,24.7,20.70001,24.7,12.29999,0,20.39999-6.3,20.39999-24.7v-55.39999h17.39999v54.5c0,31.10001-17.89999,39.39999-38.10001,39.39999-20.39999,0-37.89999-8.70001-37.89999-38.8v-55.09999l17.5-.00002h0Z" />
+															<path class="cls-1" d="m281.15202,38.93936h16.60001v16.3h-16.60001v-16.3Zm0,29.10001h16.60001v63.59999h-16.60001v-63.59999Z" />
+															<path class="cls-1" d="m334.95203,108.03936l-8.20001,23.59999h-17.10001l32-92.60001h21.70001l33.39999,92.60001h-18.29999l-8.5-23.60001h-35v.00002Zm31-14.40001c-7.29999-21.2-11.79999-33.8-13.89999-41.7h-.10001c-2.29999,8.7-7.20001,23.60001-13.10001,41.7h27.10001Z" />
+														</g>
+														<use width="135" height="166" transform="" xlink:href="#uia_symbol_positiv" />
+													</svg>
+													<strong>University of Agder:</strong> uia.no/om-uia/ansatte/ahmedkk/
+												</p>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -243,14 +263,224 @@
 										</div>
 									</div>
 								</div>
+								<!-- Education -->
+								<div class="row" id="education">
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Education</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12">
+										<div class="timeline clearfix" id="timeline_1">
+											<div class="timeline-item clearfix">
+												<h5 class="item-period">2023 - Present</h5>
+												<span class="item-company">University of Agder, Norway</span>
+												<h4 class="item-title">Ph.D Fellow in Information and Technology</h4>
+												<p>Focusing on Transparent AI, Natural Language Processing, and Machine
+													Learning using the Tsetlin Machine. Part of the CAIR AI research group.
+													Assisting in teaching Master's level courses in Distributed Systems and
+													Advanced Internet Services.</p>
+											</div>
+											<div class="timeline-item clearfix">
+												<h5 class="item-period">2016</h5>
+												<span class="item-company">Newcastle University, United Kingdom</span>
+												<h4 class="item-title">MSc in Microelectronics </h4>
+												<p>Gained deep expertise in microelectronics from transistor-level design to
+													VLSI systems. Specialized in SoC with embedded programming. Received
+													distinction.</p>
+											</div>
+											<div class="timeline-item clearfix">
+												<h5 class="item-period">2009</h5>
+												<span class="item-company">Mustansiriyah University, Iraq</span>
+												<h4 class="item-title">BSc in Electrical Engineering</h4>
+												<p>Solid foundation in electrical circuits, digital logic, and embedded
+													systems. Graduated with high standing. Later served as a laboratory
+													instructor (2010–2014) focusing on microcontroller-based system design
+													and digital electronics.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Research Section -->
+								<div class="row" id="research">
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Research & Publications</h2>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="info-list-w-icon">
+											<div class="row">
+												<div class="col-1">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" version="1.1" fill="#2066a1">
+														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+														<g id="SVGRepo_iconCarrier"> 
+															<title>ai</title> 
+															<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
+																<g id="icon" fill="#2066a1" transform="translate(64.000000, 64.000000)"> 
+																	<path d="M320,64 L320,320 L64,320 L64,64 L320,64 Z M171.749388,128 L146.817842,128 L99.4840387,256 L121.976629,256 L130.913039,230.977 L187.575039,230.977 L196.319607,256 L220.167172,256 L171.749388,128 Z M260.093778,128 L237.691519,128 L237.691519,256 L260.093778,256 L260.093778,128 Z M159.094727,149.47526 L181.409039,213.333 L137.135039,213.333 L159.094727,149.47526 Z M341.333333,256 L384,256 L384,298.666667 L341.333333,298.666667 L341.333333,256 Z M85.3333333,341.333333 L128,341.333333 L128,384 L85.3333333,384 L85.3333333,341.333333 Z M170.666667,341.333333 L213.333333,341.333333 L213.333333,384 L170.666667,384 L170.666667,341.333333 Z M85.3333333,0 L128,0 L128,42.6666667 L85.3333333,42.6666667 L85.3333333,0 Z M256,341.333333 L298.666667,341.333333 L298.666667,384 L256,384 L256,341.333333 Z M170.666667,0 L213.333333,0 L213.333333,42.6666667 L170.666667,42.6666667 L170.666667,0 Z M256,0 L298.666667,0 L298.666667,42.6666667 L256,42.6666667 L256,0 Z M341.333333,170.666667 L384,170.666667 L384,213.333333 L341.333333,213.333333 L341.333333,170.666667 Z M0,256 L42.6666667,256 L42.6666667,298.666667 L0,298.666667 L0,256 Z M341.333333,85.3333333 L384,85.3333333 L384,128 L341.333333,128 L341.333333,85.3333333 Z M0,170.666667 L42.6666667,170.666667 L42.6666667,213.333333 L0,213.333333 L0,170.666667 Z M0,85.3333333 L42.6666667,85.3333333 L42.6666667,128 L0,128 L0,85.3333333 Z" id="Combined-Shape"> </path> 
+																</g> 
+															</g>
+													 	</g>
+													</svg>
+												</div>
+												<div class="ci-text col-11">
+													<h4>AI with Tsetlin Machines</h4>
+													<p>Focused on advancing the core understanding of Tsetlin Machines, this group
+														investigates the algorithm’s internal mechanics, explores novel approaches 
+														in natural language processing using the a logic-based and interpretable AI
+														model and also highlighting practical implementations of the Tsetlin Machine 
+														in diverse domains. 
+													</p>
+													<div class="mb-3">
+														<ul class="">
+															<li class="">
+																<a href="https://arxiv.org/abs/2505.16386"
+																	target="_blank" class="">
+																	Omni TM-AE: A Scalable and
+																	Interpretable Embedding Model Using
+																	the Full Tsetlin Machine State Space
+																</a>
+															</li>
+															<li class="">
+																<a href="https://arxiv.org/abs/2501.19018"
+																	target="_blank" class="">
+																	Scalable Multi-phase Word Embedding
+																	Using Conjunctive Propositional
+																	Clauses
+																</a>
+															</li>
+															<li class="">
+																<a href="https://arxiv.org/abs/2407.09162"
+																	target="_blank" class="">
+																	Exploring State Space and Reasoning
+																	by Elimination in Tsetlin Machines
+																</a>
+															</li>
+															<li class="">
+																<a href="https://arxiv.org/abs/2406.02648"
+																	target="_blank" class="">
+																	Exploring Effects of
+																	Hyperdimensional Vectors for Tsetlin
+																	Machines
+																</a>
+															</li>
+															<li class="">
+																<a href="https://arxiv.org/abs/2501.18998"
+																	target="_blank" class="">
+																	Adversarial Attacks on AI-Generated
+																	Text Detection Models: A Token
+																	Probability-Based Approach Using
+																	Embeddings
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-1">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="64px" width="64px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
+														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+														<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#2066a1;} </style> <g> <path class="st0" d="M202.622,344.796l-6.208,11.926l-0.263,0.484c-14.411,24.499-41.026,39.714-69.478,39.714 c-14.272,0-28.371-3.847-40.731-11.122c-18.544-10.908-31.733-28.37-37.122-49.195c-0.238-0.886-0.434-1.78-0.632-2.674 L37.92,412.74h173.617L202.622,344.796z"/> <path class="st0" d="M212.883,59.091L66.446,280.944c-19.578,33.283-8.465,76.172,24.844,95.749 c33.299,19.587,76.17,8.464,95.756-24.843l99.391-191.063l-54.788-52.082C217.361,93.974,212.497,77.52,212.883,59.091z M150.794,330.533c-7.808,13.288-24.909,17.716-38.188,9.916c-13.287-7.824-17.724-24.909-9.907-38.196 c7.808-13.288,24.909-17.716,38.187-9.908C154.165,300.161,158.611,317.254,150.794,330.533z"/> <path class="st0" d="M216.401,422.247H34.278c-12.402,0-22.449,10.055-22.449,22.457V512h227.012v-67.296 C238.841,432.302,228.794,422.247,216.401,422.247z"/> <path class="st0" d="M450.024,185.737c7.184,0,14.082,1.255,20.48,3.559L328.505,19.542c-22.646-24.606-60.956-26.188-85.554-3.535 c-24.606,22.637-26.18,60.949-3.535,85.546l149.955,142.458C390.65,211.663,417.356,185.737,450.024,185.737z M299.584,77.537 c-9.374,8.628-23.973,8.013-32.602-1.361c-8.645-9.375-8.038-23.974,1.345-32.603c9.375-8.644,23.974-8.038,32.619,1.346 C309.575,54.293,308.967,68.892,299.584,77.537z"/> <polygon class="st0" points="431.668,365.227 451.246,387.249 470.815,365.227 470.815,328.975 431.668,328.975 "/> <path class="st0" d="M450.024,196.292c-27.698,0-50.155,22.449-50.155,50.155v72.169h100.301v-72.169 C500.171,218.741,477.73,196.292,450.024,196.292z M450.024,264.492c-10.818,0-19.578-8.768-19.578-19.578 c0-10.818,8.76-19.586,19.578-19.586c10.81,0,19.586,8.767,19.586,19.586C469.61,255.723,460.835,264.492,450.024,264.492z"/> </g> </g>
+													</svg>
+												</div>
+												<div class="ci-text col-11">
+													<h4>Advanced Mechatronics & Intelligent Optimization</h4>
+													<p>Innovative work in robotics and embedded control systems, focusing on autonomous navigation, real-time feedback, and biomimetic behavior for robotic platforms.</p>
+													<div class="mb-3">
+														<ul class="">
+															<li class="">
+																<a href="https://www.ijmerr.com/2023/IJMERR-V12N1-23.pdf"
+																	target="_blank" class="">
+																	Design of Path Planning Controller
+																	of Autonomous Wheeled Mobile Robot
+																	Based on Triple Pendulum Behaviour
+																</a>
+															</li>
+															<li class="">
+																<a href="https://d1wqtxts1xzle7.cloudfront.net/73254379/13562-libre.pdf?1634803300"
+																	target="_blank" class="">
+																	Design and Implementation of a
+																	Feedback Programmable Spin Coating
+																	System
+																</a>
+															</li>
+															<li>
+																<a href="https://mail.beei.org/index.php/EEI/article/view/3873"
+																	target="_blank" class="">
+																	Particle Swarm Optimization Based
+																	Multilevel MRI Compression Using
+																	Compressive Sensing
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-1">
+													<svg xmlns="http://www.w3.org/2000/svg" fill="#2066a1" width="64px" height="64px" viewBox="0 0 24 24">
+														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+														<g id="SVGRepo_iconCarrier">
+														<path d="M7.999 22h8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2h-8c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2zm-5-15h2V5h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2V9h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2v-2h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2v-2h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1z"/>
+														</g>
+													</svg>
+												</div>
+												<div class="ci-text col-11">
+													<h4>Semiconductor Fabrication & Nanoelectronics</h4>
+													<p>Research focused on advanced semiconductor materials and device engineering—bridging nanostructure fabrication with practical applications in photodetectors and Schottky-based devices. This aligns with my background in semiconductor fabrication and device design.</p>
+													<div class="mb-3">
+														<ul class="">
+															<li class="">
+																<a href="https://iopscience.iop.org/article/10.1088/1674-4926/41/10/102103/meta"
+																	target="_blank" class="">
+																	Nanoflower ZnO thin-film grown by
+																	hydrothermal technique based
+																	Schottky diode
+																</a>
+															</li>
+															<li class="">
+																<a href="https://www.sciencedirect.com/science/article/abs/pii/S0924424714000120"
+																	target="_blank" class="">
+																	Electrical and optical effects of Pd
+																	microplates embedded in ZnO thin
+																	film based MSM UV photodetectors: A
+																	comparative study
+																</a>
+															</li>
+															<li>
+																<a href="https://mail.beei.org/index.php/EEI/article/view/3873"
+																	target="_blank" class="">
+																	Particle Swarm Optimization Based
+																	Multilevel MRI Compression Using
+																	Compressive Sensing
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 								<!-- /Testimonials -->
 								<div class="row" id="testimonials">
-									<div class="col-xs-12 col-sm-12">
-										<div class="p-20"></div>
-										<!-- Testimonials -->
-										<div class="block-title">
-											<h2>Testimonials</h2>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Testimonials</h2>
+											</div>
 										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12">
 										<div class="testimonials">
 											<div class="row">
 												<div class="col-6 col-sm-6">
@@ -370,11 +600,10 @@
 															<!-- /Picture -->
 															<!-- Testimonial Text -->
 															<div class="testimonial-text">
-																<p>Throughout your tenure at Orient, you have demonstrated
-																	exceptional technical skills, creativity, and an unwavering
-																	commitment to excellence. Your willingness to take on new
-																	challenges and go the extra mile to ensure project success has
-																	been inspiring and highly appreciated by our team.</p>
+																<p>You have demonstrated exceptional technical skills, creativity, 
+																	and an unwavering commitment to excellence. Your willingness 
+																	to take on new challenges and go the extra mile to ensure project
+																	success has been inspiring and highly appreciated by our team.</p>
 															</div>
 															<!-- /Testimonial Text -->
 															<!-- Testimonial author information -->
@@ -398,217 +627,16 @@
 										<!-- /Testimonials -->
 									</div>
 								</div>
-								<!-- Education -->
-								<div class="row" id="education">
-									<div class="col-xs-12 col-sm-12">
-										<div class="block-title">
-											<h2>Education</h2>
-										</div>
-										<div class="timeline clearfix" id="timeline_1">
-											<div class="timeline-item clearfix">
-												<h5 class="item-period">2023 - Present</h5>
-												<span class="item-company">University of Agder, Norway</span>
-												<h4 class="item-title">Ph.D Fellow in Information and Technology</h4>
-												<p>Focusing on Transparent AI, Natural Language Processing, and Machine
-													Learning using the Tsetlin Machine. Part of the CAIR AI research group.
-													Assisting in teaching Master's level courses in Distributed Systems and
-													Advanced Internet Services.</p>
-											</div>
-											<div class="timeline-item clearfix">
-												<h5 class="item-period">2016</h5>
-												<span class="item-company">Newcastle University, United Kingdom</span>
-												<h4 class="item-title">MSc in Microelectronics </h4>
-												<p>Gained deep expertise in microelectronics from transistor-level design to
-													VLSI systems. Specialized in SoC with embedded programming. Received
-													distinction.</p>
-											</div>
-											<div class="timeline-item clearfix">
-												<h5 class="item-period">2009</h5>
-												<span class="item-company">Mustansiriyah University, Iraq</span>
-												<h4 class="item-title">BSc in Electrical Engineering</h4>
-												<p>Solid foundation in electrical circuits, digital logic, and embedded
-													systems. Graduated with high standing. Later served as a laboratory
-													instructor (2010–2014) focusing on microcontroller-based system design
-													and digital electronics.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- Research Section -->
-								<div class="row" id="research">
-									<div class="row">
-										<div class="col-xs-12 col-sm-12">
-											<div class="p-50"></div>
-											<div class="block-title">
-												<h2>Research & Publications</h2>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="info-list-w-icon">
-											<div class="info-block-w-icon">
-												<div class="col-1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 512 512" version="1.1" fill="#2066a1">
-														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-														<g id="SVGRepo_iconCarrier"> 
-															<title>ai</title> 
-															<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> 
-																<g id="icon" fill="#2066a1" transform="translate(64.000000, 64.000000)"> 
-																	<path d="M320,64 L320,320 L64,320 L64,64 L320,64 Z M171.749388,128 L146.817842,128 L99.4840387,256 L121.976629,256 L130.913039,230.977 L187.575039,230.977 L196.319607,256 L220.167172,256 L171.749388,128 Z M260.093778,128 L237.691519,128 L237.691519,256 L260.093778,256 L260.093778,128 Z M159.094727,149.47526 L181.409039,213.333 L137.135039,213.333 L159.094727,149.47526 Z M341.333333,256 L384,256 L384,298.666667 L341.333333,298.666667 L341.333333,256 Z M85.3333333,341.333333 L128,341.333333 L128,384 L85.3333333,384 L85.3333333,341.333333 Z M170.666667,341.333333 L213.333333,341.333333 L213.333333,384 L170.666667,384 L170.666667,341.333333 Z M85.3333333,0 L128,0 L128,42.6666667 L85.3333333,42.6666667 L85.3333333,0 Z M256,341.333333 L298.666667,341.333333 L298.666667,384 L256,384 L256,341.333333 Z M170.666667,0 L213.333333,0 L213.333333,42.6666667 L170.666667,42.6666667 L170.666667,0 Z M256,0 L298.666667,0 L298.666667,42.6666667 L256,42.6666667 L256,0 Z M341.333333,170.666667 L384,170.666667 L384,213.333333 L341.333333,213.333333 L341.333333,170.666667 Z M0,256 L42.6666667,256 L42.6666667,298.666667 L0,298.666667 L0,256 Z M341.333333,85.3333333 L384,85.3333333 L384,128 L341.333333,128 L341.333333,85.3333333 Z M0,170.666667 L42.6666667,170.666667 L42.6666667,213.333333 L0,213.333333 L0,170.666667 Z M0,85.3333333 L42.6666667,85.3333333 L42.6666667,128 L0,128 L0,85.3333333 Z" id="Combined-Shape"> </path> 
-																</g> 
-															</g>
-													 	</g>
-													</svg>
-												</div>
-												<div class="ci-text col-11">
-													<h4>AI with Tsetlin Machines</h4>
-													<p>Focused on advancing the core understanding of Tsetlin Machines, this group
-														investigates the algorithm’s internal mechanics, explores novel approaches 
-														in natural language processing using the a logic-based and interpretable AI
-														model and also highlighting practical implementations of the Tsetlin Machine 
-														in diverse domains. 
-													</p>
-													<div class="mb-3">
-														<ul class="">
-															<li class="">
-																<a href="https://arxiv.org/abs/2505.16386"
-																	target="_blank" class="">
-																	Omni TM-AE: A Scalable and
-																	Interpretable Embedding Model Using
-																	the Full Tsetlin Machine State Space
-																</a>
-															</li>
-															<li class="">
-																<a href="https://arxiv.org/abs/2501.19018"
-																	target="_blank" class="">
-																	Scalable Multi-phase Word Embedding
-																	Using Conjunctive Propositional
-																	Clauses
-																</a>
-															</li>
-															<li class="">
-																<a href="https://arxiv.org/abs/2407.09162"
-																	target="_blank" class="">
-																	Exploring State Space and Reasoning
-																	by Elimination in Tsetlin Machines
-																</a>
-															</li>
-															<li class="">
-																<a href="https://arxiv.org/abs/2406.02648"
-																	target="_blank" class="">
-																	Exploring Effects of
-																	Hyperdimensional Vectors for Tsetlin
-																	Machines
-																</a>
-															</li>
-															<li class="">
-																<a href="https://arxiv.org/abs/2501.18998"
-																	target="_blank" class="">
-																	Adversarial Attacks on AI-Generated
-																	Text Detection Models: A Token
-																	Probability-Based Approach Using
-																	Embeddings
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="info-block-w-icon">
-												<div class="col-1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="64px" width="64px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
-														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-														<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#2066a1;} </style> <g> <path class="st0" d="M202.622,344.796l-6.208,11.926l-0.263,0.484c-14.411,24.499-41.026,39.714-69.478,39.714 c-14.272,0-28.371-3.847-40.731-11.122c-18.544-10.908-31.733-28.37-37.122-49.195c-0.238-0.886-0.434-1.78-0.632-2.674 L37.92,412.74h173.617L202.622,344.796z"/> <path class="st0" d="M212.883,59.091L66.446,280.944c-19.578,33.283-8.465,76.172,24.844,95.749 c33.299,19.587,76.17,8.464,95.756-24.843l99.391-191.063l-54.788-52.082C217.361,93.974,212.497,77.52,212.883,59.091z M150.794,330.533c-7.808,13.288-24.909,17.716-38.188,9.916c-13.287-7.824-17.724-24.909-9.907-38.196 c7.808-13.288,24.909-17.716,38.187-9.908C154.165,300.161,158.611,317.254,150.794,330.533z"/> <path class="st0" d="M216.401,422.247H34.278c-12.402,0-22.449,10.055-22.449,22.457V512h227.012v-67.296 C238.841,432.302,228.794,422.247,216.401,422.247z"/> <path class="st0" d="M450.024,185.737c7.184,0,14.082,1.255,20.48,3.559L328.505,19.542c-22.646-24.606-60.956-26.188-85.554-3.535 c-24.606,22.637-26.18,60.949-3.535,85.546l149.955,142.458C390.65,211.663,417.356,185.737,450.024,185.737z M299.584,77.537 c-9.374,8.628-23.973,8.013-32.602-1.361c-8.645-9.375-8.038-23.974,1.345-32.603c9.375-8.644,23.974-8.038,32.619,1.346 C309.575,54.293,308.967,68.892,299.584,77.537z"/> <polygon class="st0" points="431.668,365.227 451.246,387.249 470.815,365.227 470.815,328.975 431.668,328.975 "/> <path class="st0" d="M450.024,196.292c-27.698,0-50.155,22.449-50.155,50.155v72.169h100.301v-72.169 C500.171,218.741,477.73,196.292,450.024,196.292z M450.024,264.492c-10.818,0-19.578-8.768-19.578-19.578 c0-10.818,8.76-19.586,19.578-19.586c10.81,0,19.586,8.767,19.586,19.586C469.61,255.723,460.835,264.492,450.024,264.492z"/> </g> </g>
-													</svg>
-												</div>
-												<div class="ci-text col-11">
-													<h4>Advanced Mechatronics & Intelligent Optimization</h4>
-													<p>Innovative work in robotics and embedded control systems, focusing on autonomous navigation, real-time feedback, and biomimetic behavior for robotic platforms.</p>
-													<div class="mb-3">
-														<ul class="">
-															<li class="">
-																<a href="https://www.ijmerr.com/2023/IJMERR-V12N1-23.pdf"
-																	target="_blank" class="">
-																	Design of Path Planning Controller
-																	of Autonomous Wheeled Mobile Robot
-																	Based on Triple Pendulum Behaviour
-																</a>
-															</li>
-															<li class="">
-																<a href="https://d1wqtxts1xzle7.cloudfront.net/73254379/13562-libre.pdf?1634803300"
-																	target="_blank" class="">
-																	Design and Implementation of a
-																	Feedback Programmable Spin Coating
-																	System
-																</a>
-															</li>
-															<li>
-																<a href="https://mail.beei.org/index.php/EEI/article/view/3873"
-																	target="_blank" class="">
-																	Particle Swarm Optimization Based
-																	Multilevel MRI Compression Using
-																	Compressive Sensing
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											<div class="info-block-w-icon">
-												<div class="col-1">
-													<svg xmlns="http://www.w3.org/2000/svg" fill="#2066a1" width="64px" height="64px" viewBox="0 0 24 24">
-														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-														<g id="SVGRepo_iconCarrier">
-														<path d="M7.999 22h8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2h-8c-1.103 0-2 .897-2 2v16c0 1.103.897 2 2 2zm-5-15h2V5h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2V9h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2v-2h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1zm-18 6h2v-2h-2v.5h-1v1h1zm18-2h-2v2h2v-.5h1v-1h-1z"/>
-														</g>
-													</svg>
-												</div>
-												<div class="ci-text col-11">
-													<h4>Semiconductor Fabrication & Nanoelectronics</h4>
-													<p>Research focused on advanced semiconductor materials and device engineering—bridging nanostructure fabrication with practical applications in photodetectors and Schottky-based devices. This aligns with my background in semiconductor fabrication and device design.</p>
-													<div class="mb-3">
-														<ul class="">
-															<li class="">
-																<a href="https://iopscience.iop.org/article/10.1088/1674-4926/41/10/102103/meta"
-																	target="_blank" class="">
-																	Nanoflower ZnO thin-film grown by
-																	hydrothermal technique based
-																	Schottky diode
-																</a>
-															</li>
-															<li class="">
-																<a href="https://www.sciencedirect.com/science/article/abs/pii/S0924424714000120"
-																	target="_blank" class="">
-																	Electrical and optical effects of Pd
-																	microplates embedded in ZnO thin
-																	film based MSM UV photodetectors: A
-																	comparative study
-																</a>
-															</li>
-															<li>
-																<a href="https://mail.beei.org/index.php/EEI/article/view/3873"
-																	target="_blank" class="">
-																	Particle Swarm Optimization Based
-																	Multilevel MRI Compression Using
-																	Compressive Sensing
-																</a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
 								<!-- Experience -->
 								<div class="row" id="experience">
-									<div class="col-xs-12 col-sm-12">
-										<div class="block-title">
-											<h2>Experience</h2>
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Experience</h2>
+											</div>
 										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12">
 										<div class="timeline clearfix" id="timeline_2">
 											<div class="timeline-item clearfix">
 												<h5 class="item-period current">2023 – Present</h5>
@@ -690,7 +718,7 @@
 												<div class="skill-container" data-value="60" id="skill_3">
 													<div class="skill-percentage"></div>
 												</div>
-												<div class="clearfix">
+																							<div class="clearfix">
 													<p>Digital Systems & Logic Design <span class="text-muted">(FSMs, clocking, memory/ALU design)</span></p>
 													<div class="skill-value">95%</div>
 												</div>
