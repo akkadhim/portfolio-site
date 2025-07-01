@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ahmed.k.kadhim.me/sitemap.xml
+
+# Disallow certain files
+Disallow: /js/
+Disallow: /css/
+Disallow: *.json
