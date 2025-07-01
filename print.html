@@ -19,8 +19,8 @@
 			<style>
 				@media print {
 					/* Show only the scrollable content */
-					body * { visibility: hidden; }
-					.page-scroll, .page-scroll * { visibility: visible; }
+					body * { visibility: hidden; background-color: white;}
+					.page-scroll, .page-scroll * { visibility: visible; background-color: #333;}
 					.page-scroll { position: absolute; top: 0; left: 0; width: 100%; }
 					/* Shrink profile photo */
 					.img-thumbnail {
@@ -40,6 +40,20 @@
 					.col-md-2, .col-md-10 { float: left !important; display: block !important; }
 					.col-md-2 { width: 16.6667% !important; }
 					.col-md-10 { width: 83.3333% !important; }
+					/* Force all text to pure black when printing */
+					p, h1, h2, h3, h4, h5 {
+						color: #000000 !important;
+					}
+					.item-company {
+						color: #2066a1 !important;
+					}
+					.text-muted {
+						color: #2066a1 !important;
+					}
+					/* Ensure progress bars render solid black */
+					.progress, .progress-bar, progress {
+						outline-width: 3px !important;
+					}
 				}
 			</style>
 		</meta>
@@ -115,6 +129,14 @@
 														<use width="135" height="166" transform="" xlink:href="#uia_symbol_positiv" />
 													</svg>
 													<strong>University of Agder:</strong> uia.no/om-uia/ansatte/ahmedkk/
+												</p>
+												<p class="link-item">
+													<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"  fill="#2066a1" width="20px" height="20px" viewBox="0 0 64 64" style="vertical-align: middle; margin-right: 8px;">
+														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+														<g id="SVGRepo_iconCarrier"> <path d="M32,0C14.328,0,0,14.328,0,32s14.328,32,32,32s32-14.328,32-32S49.672,0,32,0z M32,56c-7.254,0-13.742-3.234-18.145-8.32 c2.148-4.656,6.016-8.352,10.809-10.246C21.844,35.234,20,31.848,20,28c0-6.625,5.371-12,12-12s12,5.375,12,12 c0,3.848-1.844,7.234-4.664,9.434c4.793,1.895,8.66,5.59,10.809,10.246C45.742,52.766,39.254,56,32,56z"/> </g>
+													</svg>
+													<strong>My portfolio site:</strong> ahmed.k.kadhim.me
 												</p>
 											</div>
 										</div>
