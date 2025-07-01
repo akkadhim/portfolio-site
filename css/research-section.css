@@ -1,0 +1,381 @@
+.research_cards {
+  position: relative;
+  padding: 0 0 20px 0;
+}
+
+.c-card {
+	position: relative;
+}
+.c-card__item {
+	margin-bottom: 5px;
+	display: inline-block;
+	min-width: 33%;
+	background: #2e2e2e;
+	overflow: hidden;
+	position: relative;
+	height: auto;
+	cursor: pointer;
+}
+@media (max-width: 599px) {
+	.c-card__item {
+		height: 100vh;
+		min-width: 100%;
+		display: block;
+	}
+}
+.c-card__item:before {
+	content: "";
+	background: #2066a1;
+	display: block;
+	width: 200%;
+	height: 200%;
+	position: absolute;
+	bottom: -200%;
+	right: -200%;
+	border-radius: 50%;
+	transition: all 0.5s ease-out;
+}
+.c-card__item:hover {
+	color: #fefefe;
+}
+.c-card__item:hover::before {
+	bottom: -50%;
+	right: -50%;
+}
+.c-card__item:hover .c-card__header,
+.c-card__item:hover .c-card__icon {
+	color: #fefefe;
+}
+.c-card__item--text-only {
+	background-color: #2066a1;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.c-card__item--text-only .c-card__text {
+	color: #fefefe;
+	font-style: italic;
+	font-weight: 700;
+	font-family: "Lora", sans-serif;
+	font-size: 1.125rem;
+	line-height: 1.55;
+}
+.c-card__item--text-only:hover::before {
+	display: none;
+}
+.c-card__item--modal {
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 101;
+	background: #2066a1;
+	overflow: hidden;
+}
+@media (min-width: 1200px) {
+	.c-card__item--modal {
+		position: absolute;
+		height: auto;
+	}
+}
+.c-card__item--modal:hover {
+	color: #505050;
+}
+.c-card__item--modal:hover .c-card__icon {
+	color: #2066a1;
+}
+.c-card__item--modal:hover .c-card__header {
+	color: #272626;
+}
+.c-card__item--modal:hover::before {
+	display: none;
+}
+.c-card__sizer {
+	display: block;
+	margin-top: 100%;
+}
+.c-card__inner {
+	padding-left: 50px;
+	padding-right: 50px;
+	z-index: 10;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+@media (max-width: 599px) {
+  .c-card__inner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+.c-card__modal-content {
+	display: none;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+/* Override for Bootstrap modal-body usage */
+.modal-body.js-card-modal-content {
+	padding: 1rem !important;
+	padding-right: 1rem !important;
+	padding-left: 1rem !important;
+}
+@media (max-width: 599px) {
+	.c-card__modal-content {
+		overflow-y: scroll;
+	}
+	.modal-body.js-card-modal-content {
+		padding: 0.75rem !important;
+		overflow-y: auto;
+	}
+}
+@media (min-width: 600px) {
+	.c-card__modal-content {
+		padding-right: 60px;
+		padding-left: 60px;
+	}
+	.modal-body.js-card-modal-content {
+		padding: 1.5rem !important;
+	}
+}
+@media (min-width: 1200px) {
+	.c-card__modal-content {
+		padding-right: 120px;
+		padding-left: 120px;
+	}
+	.modal-body.js-card-modal-content {
+		padding: 2rem !important;
+	}
+}
+.c-card__icon {
+	margin-bottom: 28px;
+	color: #2066a1;
+	font-size: 2.25rem;
+	transition: all 0.3s;
+	line-height: 1;
+}
+.c-card__header {
+	margin-bottom: 10px;
+	transition: all 0.3s;
+}
+.c-card__text {
+	margin-bottom: 10px;
+	transition: all 0.3s;
+}
+.c-card__button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 84px;
+	height: 84px;
+	color: #fefefe;
+	background-image: linear-gradient(135deg, transparent 0%, transparent 51%, #2066a1 51%, #2066a1 100%);
+}
+.c-card__button-field {
+	cursor: pointer;
+	position: absolute;
+	bottom: 10px;
+	right: 13px;
+	z-index: 10;
+	padding: 0 !important;
+	text-align: center;
+	box-shadow: none !important;
+	color: #fefefe;
+	border: none !important;
+	background: none !important;
+	outline: none;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	font-size: inherit !important;
+	line-height: 1;
+	transition: none !important;
+	display: inline-block;
+}
+.c-card__button-field::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: -3px;
+	left: 50%;
+	margin-left: -12px;
+	border: 1px solid #fefefe;
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+}
+.c-card__button-field::before {
+	content: "\eb8b";
+	font-family: "icofont";
+	font-size: 18px;
+	line-height: 1;
+}
+.c-card__button-field--is-active::before {
+	content: "\efb5";
+}
+.c-card__button-field:hover,
+.c-card__button-field:focus {
+	background: none !important;
+	border: none !important;
+	color: #fefefe !important;
+	box-shadow: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	outline: none !important;
+}
+.c-card__button-field:active,
+.c-card__button-field:focus-visible {
+	background: none !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+.c-card__caption {
+	font-size: 0.75rem;
+}
+.c-card__link {
+	display: block;
+	font-size: 0.75rem;
+	color: #ffffff;
+	position: relative;
+	text-decoration: underline;
+	margin-bottom: 5px;
+}
+.c-card__link:hover {
+	text-decoration: none;
+}
+.c-card__link-caption {
+	margin-bottom: 5px;
+}
+
+.u-fade-in {
+	visibility: visible;
+	display: block;
+}
+
+.u-fade-out {
+	visibility: hidden;
+	display: none;
+}
+
+@media (max-width: 599px) {
+	.u-fade-out-mobile {
+		visibility: hidden !important;
+	}
+}
+
+@media (min-width: 900px) {
+	.u-slide-in {
+		animation-name: slide-in;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+}
+
+
+/**
+ * @package IcoFont by ShapeBootstrap - https://shapebootstrap.net
+ * @version 1.0.0 Beta
+ * @author IcoFont http://icofont.com
+ * @copyright Copyright (c) 2016 IcoFont
+ * @license - http://icofont.com/license/
+*/
+
+@font-face {
+	font-family: "icofont";
+	src: url("../fonts/icofont.eot?v=1.0.0-beta");
+	src: url("../fonts/icofont.eot?v=1.0.0-beta#iefix") format("embedded-opentype"), url("../fonts/icofont.ttf?v=1.0.0-beta") format("truetype"), url("../fonts/icofont.woff?v=1.0.0-beta") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icofont {
+	font-family: "IcoFont" !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/*Font size*/
+.icofont-lg {
+	font-size: 1.33333333em;
+	line-height: 0.75em;
+	vertical-align: -15%;
+}
+
+.icofont-2x {
+	font-size: 2em;
+}
+
+.icofont-3x {
+	font-size: 3em;
+}
+
+.icofont-4x {
+	font-size: 4em;
+}
+
+.icofont-5x {
+	font-size: 5em;
+}
+
+.icofont-fw {
+	display: inline-block;
+	width: 1.28571429em;
+	text-align: center;
+}
+
+/*Fixed Width Icons*/
+.icofont-fw {
+	width: 1.28571429em;
+	text-align: center;
+}
+
+/*Custom list icons*/
+.icofont-ul {
+	padding-left: 0;
+	margin-left: 2.14285714em;
+	list-style-type: none;
+}
+
+.icofont-ul > li {
+	position: relative;
+}
+
+.icofont-li {
+	position: absolute;
+	left: -2.14285714em;
+	width: 2.14285714em;
+	top: 0.14285714em;
+	text-align: center;
+}
+
+/*Animation*/
+.icofont-rotate {
+	animation: icofont-rotate 2s infinite linear;
+}
+
+@keyframes icofont-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(359deg);
+	}
+}
