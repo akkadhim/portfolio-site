@@ -40,6 +40,7 @@
 					.col-md-2, .col-md-10 { float: left !important; display: block !important; }
 					.col-md-2 { width: 16.6667% !important; }
 					.col-md-10 { width: 83.3333% !important; }
+					.col-md-6 { width: 50% !important; }
 					/* Force all text to pure black when printing */
 					p, h1, h2, h3, h4, h5 {
 						color: #000000 !important;
@@ -54,6 +55,30 @@
 					.progress, .progress-bar, progress {
 						outline-width: 3px !important;
 					}
+					.timeline-item{
+						padding-bottom: 0px !important;
+						padding-top: 0px !important;
+					}
+					.print-only { 
+						display: block !important; 
+					}
+				}
+				.print-only {
+					border: 0; 
+					border-top: 2px solid #2066a1; 
+					margin: 20px 0; 
+					display: none;
+				}
+				.reference-content {
+					position: relative;
+					padding: 20px 20px 20px 20px;
+					background-color: #282828;
+					border-radius: 8px;
+					border: 2px solid #444;
+				}
+				.reference-item {
+					padding: 10px;
+					margin-bottom: 0px;
 				}
 			</style>
 		</meta>
@@ -285,6 +310,7 @@
 										</div>
 									</div>
 								</div>
+								<hr class="print-only">
 								<!-- Education -->
 								<div class="row" id="education">
 									<div class="row">
@@ -325,6 +351,7 @@
 										</div>
 									</div>
 								</div>
+								<hr class="print-only">
 								<!-- Research Section -->
 								<div class="row" id="research">
 									<div class="row">
@@ -407,7 +434,7 @@
 											</div>
 											<div class="row">
 												<div class="col-1">
-													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="64px" width="64px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="55px" width="55px" version="1.1" id="_x32_" viewBox="0 0 512 512" xml:space="preserve" fill="#000000">
 														<g id="SVGRepo_bgCarrier" stroke-width="0"/>
 														<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
 														<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#2066a1;} </style> <g> <path class="st0" d="M202.622,344.796l-6.208,11.926l-0.263,0.484c-14.411,24.499-41.026,39.714-69.478,39.714 c-14.272,0-28.371-3.847-40.731-11.122c-18.544-10.908-31.733-28.37-37.122-49.195c-0.238-0.886-0.434-1.78-0.632-2.674 L37.92,412.74h173.617L202.622,344.796z"/> <path class="st0" d="M212.883,59.091L66.446,280.944c-19.578,33.283-8.465,76.172,24.844,95.749 c33.299,19.587,76.17,8.464,95.756-24.843l99.391-191.063l-54.788-52.082C217.361,93.974,212.497,77.52,212.883,59.091z M150.794,330.533c-7.808,13.288-24.909,17.716-38.188,9.916c-13.287-7.824-17.724-24.909-9.907-38.196 c7.808-13.288,24.909-17.716,38.187-9.908C154.165,300.161,158.611,317.254,150.794,330.533z"/> <path class="st0" d="M216.401,422.247H34.278c-12.402,0-22.449,10.055-22.449,22.457V512h227.012v-67.296 C238.841,432.302,228.794,422.247,216.401,422.247z"/> <path class="st0" d="M450.024,185.737c7.184,0,14.082,1.255,20.48,3.559L328.505,19.542c-22.646-24.606-60.956-26.188-85.554-3.535 c-24.606,22.637-26.18,60.949-3.535,85.546l149.955,142.458C390.65,211.663,417.356,185.737,450.024,185.737z M299.584,77.537 c-9.374,8.628-23.973,8.013-32.602-1.361c-8.645-9.375-8.038-23.974,1.345-32.603c9.375-8.644,23.974-8.038,32.619,1.346 C309.575,54.293,308.967,68.892,299.584,77.537z"/> <polygon class="st0" points="431.668,365.227 451.246,387.249 470.815,365.227 470.815,328.975 431.668,328.975 "/> <path class="st0" d="M450.024,196.292c-27.698,0-50.155,22.449-50.155,50.155v72.169h100.301v-72.169 C500.171,218.741,477.73,196.292,450.024,196.292z M450.024,264.492c-10.818,0-19.578-8.768-19.578-19.578 c0-10.818,8.76-19.586,19.578-19.586c10.81,0,19.586,8.767,19.586,19.586C469.61,255.723,460.835,264.492,450.024,264.492z"/> </g> </g>
@@ -493,162 +520,7 @@
 										</div>
 									</div>
 								</div>
-								<!-- /Testimonials -->
-								<div class="row" id="testimonials">
-									<div class="row">
-										<div class="col-xs-12 col-sm-12">
-											<div class="block-title">
-												<h2>Testimonials</h2>
-											</div>
-										</div>
-									</div>
-									<div class="col-xs-12 col-sm-12">
-										<div class="testimonials">
-											<div class="row">
-												<div class="col-6 col-sm-6">
-													<!-- Testimonial 1 -->
-													<div class="testimonial-item">
-														<!-- Testimonial Content -->
-														<div class="testimonial-content">
-															<!-- Picture -->
-															<div class="testimonial-picture">
-																<img alt="Ghusoon M. Ali" src="./img/ghusoon.jpeg" />
-															</div>
-															<!-- /Picture -->
-															<!-- Testimonial Text -->
-															<div class="testimonial-text">
-																<p>A uniquely stands out person that I have taught and worked with.
-																	During our time together, Ahmed displayed great talents in
-																	electronics, technical applications, hardware, and software.</p>
-															</div>
-															<!-- /Testimonial Text -->
-															<!-- Testimonial author information -->
-															<div class="testimonial-author-info">
-																<h5 class="testimonial-author">Ghusoon M. Ali</h5>
-																<p class="testimonial-firm">Professor at Mustansiriyah University
-																</p>
-															</div>
-															<!-- /Testimonial author information -->
-															<div class="testimonial-icon">
-																<i class="fa fa-quote-left"> </i>
-															</div>
-															<div class="testimonial-icon-big">
-																<i class="fa fa-quote-right"> </i>
-															</div>
-														</div>
-														<!-- /Testimonial Content -->
-													</div>
-												</div>
-												<div class="col-6 col-sm-6">
-													<!-- Testimonial 2 -->
-													<div class="testimonial-item">
-														<!-- Testimonial Content -->
-														<div class="testimonial-content">
-															<!-- Picture -->
-															<div class="testimonial-picture">
-																<img alt="Gary Johnson" src="./img/ole.jpg" />
-															</div>
-															<!-- /Picture -->
-															<!-- Testimonial Text -->
-															<div class="testimonial-text">
-																<p>I am grateful to have you on the team and amazed by your
-																	achievements in natural language understanding with Tsetlin
-																	machines.</p>
-															</div>
-															<!-- /Testimonial Text -->
-															<!-- Testimonial author information -->
-															<div class="testimonial-author-info">
-																<h5 class="testimonial-author">Ole-Christoffer Granmo</h5>
-																<p class="testimonial-firm">Professor and the Founding Director of
-																	CAIR at the University of Agder</p>
-															</div>
-															<!-- /Testimonial author information -->
-															<div class="testimonial-icon">
-																<i class="fa fa-quote-left"> </i>
-															</div>
-															<div class="testimonial-icon-big">
-																<i class="fa fa-quote-right"> </i>
-															</div>
-														</div>
-														<!-- /Testimonial Content -->
-													</div>
-												</div>
-											</div>
-											<div class="row">
-												<div class="col-6 col-sm-6">
-													<!-- Testimonial 3 -->
-													<div class="testimonial-item">
-														<!-- Testimonial Content -->
-														<div class="testimonial-content">
-															<!-- Picture -->
-															<div class="testimonial-picture">
-																<img alt="Daniel Pringle" src="./img/alex.jpeg" />
-															</div>
-															<!-- /Picture -->
-															<!-- Testimonial Text -->
-															<div class="testimonial-text">
-																<p>The extent of study exceeds the expectations to this coursework.
-																	I see evidence of ability to connect different aspects of
-																	learning and experience in a creative way. It is one of the best
-																	examples of work throughout years.</p>
-															</div>
-															<!-- /Testimonial Text -->
-															<!-- Testimonial author information -->
-															<div class="testimonial-author-info">
-																<h5 class="testimonial-author">Alex Bystrov</h5>
-																<p class="testimonial-firm">CAD Module Supervisor, Newcastle
-																	University</p>
-															</div>
-															<!-- /Testimonial author information -->
-															<div class="testimonial-icon">
-																<i class="fa fa-quote-left"> </i>
-															</div>
-															<div class="testimonial-icon-big">
-																<i class="fa fa-quote-right"> </i>
-															</div>
-														</div>
-														<!-- /Testimonial Content -->
-													</div>
-												</div>
-												<div class="col-6 col-sm-6">
-													<!-- Testimonial 4 -->
-													<div class="testimonial-item">
-														<!-- Testimonial Content -->
-														<div class="testimonial-content">
-															<!-- Picture -->
-															<div class="testimonial-picture">
-																<img alt="Daniel Pringle" src="./img/mohammed.jpg" />
-															</div>
-															<!-- /Picture -->
-															<!-- Testimonial Text -->
-															<div class="testimonial-text">
-																<p>You have demonstrated exceptional technical skills, creativity, 
-																	and an unwavering commitment to excellence. Your willingness 
-																	to take on new challenges and go the extra mile to ensure project
-																	success has been inspiring and highly appreciated by our team.</p>
-															</div>
-															<!-- /Testimonial Text -->
-															<!-- Testimonial author information -->
-															<div class="testimonial-author-info">
-																<h5 class="testimonial-author">Mohammad Karim</h5>
-																<p class="testimonial-firm">CTO, Orient Telecom, Iraq</p>
-															</div>
-															<!-- /Testimonial author information -->
-															<div class="testimonial-icon">
-																<i class="fa fa-quote-left"> </i>
-															</div>
-															<div class="testimonial-icon-big">
-																<i class="fa fa-quote-right"> </i>
-															</div>
-														</div>
-														<!-- /Testimonial Content -->
-													</div>
-												</div>
-											</div>
-										</div>
-										<!-- /Testimonials -->
-									</div>
-								</div>
+								<hr class="print-only">
 								<!-- Experience -->
 								<div class="row" id="experience">
 									<div class="row">
@@ -709,6 +581,7 @@
 										</div>
 									</div>
 								</div>
+								<hr class="print-only">
 								<!-- Skills -->
 								<div class="row" id="skills">
 									<div class="row" id="skills_1">
@@ -873,6 +746,198 @@
 										</div>
 									</div>
 								</div>
+								<hr class="print-only">
+								<!-- References -->
+								<div class="row" id="references">
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Academic References</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12">
+										<div class="row">
+											<div class="col-md-6">
+												<div class="reference-item">
+													<div class="reference-content">
+														<h3>Lei Jiao</h3>
+														<h5 class="text-muted">Professor at University of Agder. My PhD supervisor. I also worked as a teaching assistant with him.</h5>
+														<p>Email: <a href="mailto:lei.jiao@uia.no" class="text-muted">lei.jiao@uia.no</a></p>
+														<p>Phone: <a href="tel:+47-3723-3428" class="text-muted">+47 372 33 428</a></p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="reference-item">
+													<div class="reference-content">
+														<h3>Noureddine Bouhmala</h3>
+														<h5 class="text-muted">Professor at University of Stavanger. Collaborated with him in a master's distributed systems course.</h5>
+														<p>Email: <a href="mailto:noureddine.bouhmala@usn.no" class="text-muted">noureddine.bouhmala@usn.no</a></p>
+														<p>Phone: <a href="tel:+47-3100-9066" class="text-muted">+47 310 09 066</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr class="print-only">
+								<!-- /Testimonials -->
+								<div class="row" id="testimonials">
+									<div class="row">
+										<div class="col-xs-12 col-sm-12">
+											<div class="block-title">
+												<h2>Testimonials</h2>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-12">
+										<div class="testimonials">
+											<div class="row">
+												<div class="col-6 col-sm-6">
+													<!-- Testimonial 1 -->
+													<div class="testimonial-item">
+														<!-- Testimonial Content -->
+														<div class="testimonial-content">
+															<!-- Picture -->
+															<div class="testimonial-picture">
+																<img alt="Ghusoon M. Ali" src="./img/ghusoon.jpeg" />
+															</div>
+															<!-- /Picture -->
+															<!-- Testimonial Text -->
+															<div class="testimonial-text">
+																<p>A uniquely stands out person that I have taught and worked with.
+																	During our time together, Ahmed displayed great talents in
+																	electronics, technical applications, hardware, and software.</p>
+															</div>
+															<!-- /Testimonial Text -->
+															<!-- Testimonial author information -->
+															<div class="testimonial-author-info">
+																<h5 class="testimonial-author">Ghusoon M. Ali</h5>
+																<p class="testimonial-firm">Professor at Mustansiriyah University
+																</p>
+															</div>
+															<!-- /Testimonial author information -->
+															<div class="testimonial-icon">
+																<i class="fa fa-quote-left"> </i>
+															</div>
+															<div class="testimonial-icon-big">
+																<i class="fa fa-quote-right"> </i>
+															</div>
+														</div>
+														<!-- /Testimonial Content -->
+													</div>
+												</div>
+												<div class="col-6 col-sm-6">
+													<!-- Testimonial 2 -->
+													<div class="testimonial-item">
+														<!-- Testimonial Content -->
+														<div class="testimonial-content">
+															<!-- Picture -->
+															<div class="testimonial-picture">
+																<img alt="Gary Johnson" src="./img/ole.jpg" />
+															</div>
+															<!-- /Picture -->
+															<!-- Testimonial Text -->
+															<div class="testimonial-text">
+																<p>I am grateful to have you on the team and amazed by your
+																	achievements in natural language understanding with Tsetlin
+																	machines.</p>
+															</div>
+															<!-- /Testimonial Text -->
+															<!-- Testimonial author information -->
+															<div class="testimonial-author-info">
+																<h5 class="testimonial-author">Ole-Christoffer Granmo</h5>
+																<p class="testimonial-firm">Professor and the Founding Director of
+																	CAIR at the University of Agder</p>
+															</div>
+															<!-- /Testimonial author information -->
+															<div class="testimonial-icon">
+																<i class="fa fa-quote-left"> </i>
+															</div>
+															<div class="testimonial-icon-big">
+																<i class="fa fa-quote-right"> </i>
+															</div>
+														</div>
+														<!-- /Testimonial Content -->
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6 col-sm-6">
+													<!-- Testimonial 3 -->
+													<div class="testimonial-item">
+														<!-- Testimonial Content -->
+														<div class="testimonial-content">
+															<!-- Picture -->
+															<div class="testimonial-picture">
+																<img alt="Daniel Pringle" src="./img/alex.jpeg" />
+															</div>
+															<!-- /Picture -->
+															<!-- Testimonial Text -->
+															<div class="testimonial-text">
+																<p>The extent of study exceeds the expectations to this coursework.
+																	I see evidence of ability to connect different aspects of
+																	learning and experience in a creative way. It is one of the best
+																	examples of work throughout years.</p>
+															</div>
+															<!-- /Testimonial Text -->
+															<!-- Testimonial author information -->
+															<div class="testimonial-author-info">
+																<h5 class="testimonial-author">Alex Bystrov</h5>
+																<p class="testimonial-firm">CAD Module Supervisor, Newcastle
+																	University</p>
+															</div>
+															<!-- /Testimonial author information -->
+															<div class="testimonial-icon">
+																<i class="fa fa-quote-left"> </i>
+															</div>
+															<div class="testimonial-icon-big">
+																<i class="fa fa-quote-right"> </i>
+															</div>
+														</div>
+														<!-- /Testimonial Content -->
+													</div>
+												</div>
+												<div class="col-6 col-sm-6">
+													<!-- Testimonial 4 -->
+													<div class="testimonial-item">
+														<!-- Testimonial Content -->
+														<div class="testimonial-content">
+															<!-- Picture -->
+															<div class="testimonial-picture">
+																<img alt="Daniel Pringle" src="./img/mohammed.jpg" />
+															</div>
+															<!-- /Picture -->
+															<!-- Testimonial Text -->
+															<div class="testimonial-text">
+																<p>You have demonstrated exceptional technical skills, creativity, 
+																	and an unwavering commitment to excellence. Your willingness 
+																	to take on new challenges and go the extra mile to ensure project
+																	success has been inspiring and highly appreciated by our team.</p>
+															</div>
+															<!-- /Testimonial Text -->
+															<!-- Testimonial author information -->
+															<div class="testimonial-author-info">
+																<h5 class="testimonial-author">Mohammad Karim</h5>
+																<p class="testimonial-firm">CTO, Orient Telecom, Iraq</p>
+															</div>
+															<!-- /Testimonial author information -->
+															<div class="testimonial-icon">
+																<i class="fa fa-quote-left"> </i>
+															</div>
+															<div class="testimonial-icon-big">
+																<i class="fa fa-quote-right"> </i>
+															</div>
+														</div>
+														<!-- /Testimonial Content -->
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /Testimonials -->
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -894,5 +959,10 @@
 		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/validator.js"></script>
 		<script src="js/main.js"></script>
+		<script>
+            window.onload = function() {
+                window.print();
+            };
+        </script>
 	</body>
 </html>
