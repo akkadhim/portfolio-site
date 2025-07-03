@@ -375,7 +375,7 @@
 																	<path d="M320,64 L320,320 L64,320 L64,64 L320,64 Z M171.749388,128 L146.817842,128 L99.4840387,256 L121.976629,256 L130.913039,230.977 L187.575039,230.977 L196.319607,256 L220.167172,256 L171.749388,128 Z M260.093778,128 L237.691519,128 L237.691519,256 L260.093778,256 L260.093778,128 Z M159.094727,149.47526 L181.409039,213.333 L137.135039,213.333 L159.094727,149.47526 Z M341.333333,256 L384,256 L384,298.666667 L341.333333,298.666667 L341.333333,256 Z M85.3333333,341.333333 L128,341.333333 L128,384 L85.3333333,384 L85.3333333,341.333333 Z M170.666667,341.333333 L213.333333,341.333333 L213.333333,384 L170.666667,384 L170.666667,341.333333 Z M85.3333333,0 L128,0 L128,42.6666667 L85.3333333,42.6666667 L85.3333333,0 Z M256,341.333333 L298.666667,341.333333 L298.666667,384 L256,384 L256,341.333333 Z M170.666667,0 L213.333333,0 L213.333333,42.6666667 L170.666667,42.6666667 L170.666667,0 Z M256,0 L298.666667,0 L298.666667,42.6666667 L256,42.6666667 L256,0 Z M341.333333,170.666667 L384,170.666667 L384,213.333333 L341.333333,213.333333 L341.333333,170.666667 Z M0,256 L42.6666667,256 L42.6666667,298.666667 L0,298.666667 L0,256 Z M341.333333,85.3333333 L384,85.3333333 L384,128 L341.333333,128 L341.333333,85.3333333 Z M0,170.666667 L42.6666667,170.666667 L42.6666667,213.333333 L0,213.333333 L0,170.666667 Z M0,85.3333333 L42.6666667,85.3333333 L42.6666667,128 L0,128 L0,85.3333333 Z" id="Combined-Shape"> </path> 
 																</g> 
 															</g>
-													 	</g>
+														</g>
 													</svg>
 												</div>
 												<div class="ci-text col-11">
@@ -754,40 +754,40 @@
 										</div>
 									</div>
 								</div>
-								<hr class="print-only">
 								<!-- References -->
-								<div class="row" id="references">
-									<div class="row">
-										<div class="col-xs-12 col-sm-12">
-											<div class="block-title">
-												<h2>Academic References</h2>
-											</div>
-										</div>
-									</div>
+								<hr id="references-hr" style="display:none;">
+								<div class="row" id="references" style="display:none;">
+								  <div class="row">
 									<div class="col-xs-12 col-sm-12">
-										<div class="row">
-											<div class="col-md-6">
-												<div class="reference-item">
-													<div class="reference-content">
-														<h3>Lei Jiao</h3>
-														<h5 class="text-muted">Professor at University of Agder. My PhD supervisor. I also worked as a teaching assistant with him.</h5>
-														<p>Email: <a href="mailto:lei.jiao@uia.no" class="text-muted">lei.jiao@uia.no</a></p>
-														<p>Phone: <a href="tel:+47-3723-3428" class="text-muted">+47 372 33 428</a></p>
-													</div>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="reference-item">
-													<div class="reference-content">
-														<h3>Noureddine Bouhmala</h3>
-														<h5 class="text-muted">Professor at University of Stavanger. Collaborated with him in a master's distributed systems course.</h5>
-														<p>Email: <a href="mailto:noureddine.bouhmala@usn.no" class="text-muted">noureddine.bouhmala@usn.no</a></p>
-														<p>Phone: <a href="tel:+47-3100-9066" class="text-muted">+47 310 09 066</a></p>
-													</div>
-												</div>
-											</div>
-										</div>
+									  <div class="block-title">
+										<h2>Academic References</h2>
+									  </div>
 									</div>
+								  </div>
+								  <div class="col-xs-12 col-sm-12">
+									<div class="row">
+									  <div class="col-md-6">
+										<div class="reference-item">
+										  <div class="reference-content">
+											<h3>Lei Jiao</h3>
+											<h5 class="text-muted">Professor at University of Agder. My PhD supervisor. I also worked as a teaching assistant with him.</h5>
+											<p>Email: <a href="mailto:lei.jiao@uia.no" class="text-muted">lei.jiao@uia.no</a></p>
+											<p>Phone: <a href="tel:+47-3723-3428" class="text-muted">+47 372 33 428</a></p>
+										  </div>
+										</div>
+									  </div>
+									  <div class="col-md-6">
+										<div class="reference-item">
+										  <div class="reference-content">
+											<h3>Noureddine Bouhmala</h3>
+											<h5 class="text-muted">Professor at University of Stavanger. Collaborated with him in a master's distributed systems course.</h5>
+											<p>Email: <a href="mailto:noureddine.bouhmala@usn.no" class="text-muted">noureddine.bouhmala@usn.no</a></p>
+											<p>Phone: <a href="tel:+47-3100-9066" class="text-muted">+47 310 09 066</a></p>
+										  </div>
+										</div>
+									  </div>
+									</div>
+								  </div>
 								</div>
 								<hr class="print-only">
 								<!-- /Testimonials -->
@@ -967,10 +967,18 @@
 		<script src="js/jquery.magnific-popup.min.js"></script>
 		<script src="js/validator.js"></script>
 		<script src="js/main.js"></script>
-		<script>
-            window.onload = function() {
-                window.print();
-            };
-        </script>
+	   <script>
+		   window.onload = function() {
+			   // Add 'print-only' class to references if 'withRef' parameter is present
+			   var url = new URL(window.location.href);
+			   if (url.searchParams.has('withRef')) {
+				   var refs = document.getElementById('references');
+				   var hr = document.getElementById('references-hr');
+				   if (refs) refs.classList.add('print-only');
+				   if (hr) hr.classList.add('print-only');
+			   }
+			   window.print();
+		   };
+	   </script>
 	</body>
 </html>
