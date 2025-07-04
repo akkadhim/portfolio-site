@@ -317,13 +317,13 @@
         });
         $("head").append('<style data-styles="leven-theme-skills-css" type="text/css">' + skillStyles + "</style>");
 
-        // Smooth scroll for in-page navigation links
         $('.site-main-menu a[href*="#"]').on('click', function(e) {
             var hash = this.hash;
             var $target = $(hash);
             if ($target.length) {
                 e.preventDefault();
-                $('html, body').animate({ scrollTop: $target.offset().top }, 600);
+                // animate body scroll only
+                $('body').stop(true).animate({ scrollTop: $target.offset().top }, 600);
             }
         });
     });
