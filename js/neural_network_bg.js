@@ -117,12 +117,67 @@ stats.domElement.style.position = "absolute";
 stats.domElement.style.left = "0px";
 stats.domElement.style.top = "0px";
 count_particlesx = document.querySelector(".js-count-particles");
+
+// Animation control variables
+let animationRunning = true;
+let animationFrame;
+
 update = function () {
 	stats.begin();
 	stats.end();
 	// if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
 	//   count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
 	// }
-	requestAnimationFrame(update);
+	if (animationRunning) {
+		animationFrame = requestAnimationFrame(update);
+	}
 };
-requestAnimationFrame(update);
+
+// Start the animation
+animationFrame = requestAnimationFrame(update);
+
+// Animation Control Button Functionality
+document.addEventListener('DOMContentLoaded', function() {
+	const controlBtn = document.getElementById('animation-control');
+	const animationIcon = document.getElementById('animation-icon');
+	
+	if (controlBtn && animationIcon) {
+		controlBtn.addEventListener('click', function() {
+			if (animationRunning) {
+				// Pause animation
+				animationRunning = false;
+				cancelAnimationFrame(animationFrame);
+				
+				// Stop particles animation
+				if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+					window.pJSDom[0].pJS.particles.move.enable = false;
+					// Clear the canvas to stop visual updates
+					window.pJSDom[0].pJS.fn.canvasClear();
+				}
+				
+				// Update button
+				animationIcon.className = 'fa fa-play';
+				controlBtn.classList.add('paused');
+				controlBtn.title = 'Play Background Animation';
+			} else {
+				// Resume animation
+				animationRunning = true;
+				
+				// Resume particles animation
+				if (window.pJSDom && window.pJSDom[0] && window.pJSDom[0].pJS) {
+					window.pJSDom[0].pJS.particles.move.enable = true;
+					// Restart the animation loop
+					window.pJSDom[0].pJS.fn.vendors.draw();
+				}
+				
+				// Restart the update loop
+				animationFrame = requestAnimationFrame(update);
+				
+				// Update button
+				animationIcon.className = 'fa fa-pause';
+				controlBtn.classList.remove('paused');
+				controlBtn.title = 'Pause Background Animation';
+			}
+		});
+	}
+});
