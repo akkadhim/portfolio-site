@@ -98,6 +98,13 @@
                 $(".page-scroll").removeClass("add-prespective");
                 $container.removeClass("transform3d");
             }, 1000);
+            // On load with hash, scroll to section to correct offset
+            if (location.hash) {
+                var target = document.querySelector(location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'auto', block: 'start' });
+                }
+            }
         })
         .on("hashchange", function () {
             if (location.hash) handleAjaxPage();
