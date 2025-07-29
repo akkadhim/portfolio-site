@@ -317,13 +317,28 @@
         });
         $("head").append('<style data-styles="leven-theme-skills-css" type="text/css">' + skillStyles + "</style>");
 
+        // Main menu navigation handler
         $('.site-main-menu a[href*="#"]').on('click', function(e) {
+            e.preventDefault();
             var hash = this.hash;
-            var $target = $(hash);
-            if ($target.length) {
-                e.preventDefault();
-                // animate body scroll only
-                $('body').stop(true).animate({ scrollTop: $target.offset().top }, 600);
+            var elem = document.querySelector(hash);
+            if (elem) {
+                // Close mobile menu if open
+                $(".site-nav").addClass("mobile-menu-hide");
+                // Smooth native scroll
+                elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+
+        // Side navigation - use native smooth scroll
+        $('.side-nav a').on('click', function(e) {
+            e.preventDefault();
+            var href = $(this).attr('href');
+            if (href && href.indexOf('#') === 0) {
+                var elem = document.querySelector(href);
+                if (elem) {
+                    elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
         });
     });
