@@ -325,15 +325,35 @@
         $("head").append('<style data-styles="leven-theme-skills-css" type="text/css">' + skillStyles + "</style>");
 
         // Main menu navigation handler
+        // Only intercept same-page hash links; allow normal navigation to other pages like "index.html#section"
         $('.site-main-menu a[href*="#"]').on('click', function(e) {
-            e.preventDefault();
-            var hash = this.hash;
-            var elem = document.querySelector(hash);
-            if (elem) {
-                // Close mobile menu if open
-                $(".site-nav").addClass("mobile-menu-hide");
-                // Smooth native scroll
-                elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var href = this.getAttribute('href') || '';
+
+            // Allow normal navigation if link points to a different page (e.g., index.html#research from contact.html)
+            try {
+                var url = new URL(href, window.location.origin);
+                var samePage = url.pathname === window.location.pathname || href.indexOf('#') === 0;
+                if (!samePage || !url.hash) return; // Don't prevent default; let the browser navigate
+
+                // Same page + hash present: smooth scroll
+                e.preventDefault();
+                var elem = document.querySelector(url.hash);
+                if (elem) {
+                    // Close mobile menu if open
+                    $(".site-nav").addClass("mobile-menu-hide");
+                    // Smooth native scroll
+                    elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            } catch (err) {
+                // Fallback for older browsers or invalid URLs: only intercept pure hash links
+                if (href.indexOf('#') === 0) {
+                    e.preventDefault();
+                    var elem2 = document.querySelector(href);
+                    if (elem2) {
+                        $(".site-nav").addClass("mobile-menu-hide");
+                        elem2.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
             }
         });
 
